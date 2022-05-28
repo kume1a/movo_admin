@@ -18,6 +18,9 @@ abstract class AppTheme {
     primaryColorLight: Palette.primaryLight,
     primaryColorDark: Palette.primaryDark,
     secondaryHeaderColor: Palette.secondaryElement,
+    textSelectionTheme: const TextSelectionThemeData(
+      cursorColor: Colors.white,
+    ),
     appBarTheme: const AppBarTheme(
       elevation: 0,
       centerTitle: true,
@@ -42,7 +45,7 @@ abstract class AppTheme {
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: Palette.secondaryContainer,
+      fillColor: Palette.primary,
       border: OutlineInputBorder(
         borderRadius: _defaultInputBorderRadius,
         borderSide: BorderSide.none,
@@ -55,7 +58,7 @@ abstract class AppTheme {
         borderRadius: _defaultInputBorderRadius,
         borderSide: const BorderSide(color: Palette.primary),
       ),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16),
       hintStyle: const TextStyle(fontSize: 14, color: Palette.secondaryElement),
       labelStyle: const TextStyle(fontSize: 14, color: Palette.secondaryElement),
       alignLabelWithHint: true,

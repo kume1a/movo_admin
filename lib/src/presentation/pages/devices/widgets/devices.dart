@@ -34,22 +34,25 @@ class _Item extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
-      padding: const EdgeInsets.symmetric(vertical: 12),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text(device.deviceId),
-          Container(
-            width: 12,
-            height: 12,
-            decoration: BoxDecoration(
-              color: device.isAuthorized ? Colors.green : Colors.red,
-              shape: BoxShape.circle,
+    return InkWell(
+      onLongPress: () => context.read<DevicesPageCubit>().onDeviceLongPress(device),
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text(device.deviceId),
+            Container(
+              width: 12,
+              height: 12,
+              decoration: BoxDecoration(
+                color: device.isAuthorized ? Colors.green : Colors.red,
+                shape: BoxShape.circle,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

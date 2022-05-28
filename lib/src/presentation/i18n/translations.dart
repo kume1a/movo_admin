@@ -15,8 +15,22 @@ class AppTranslations extends Translations {
 
   final Map<String, String> _enUs = <String, String>{
     TkCommon.error: 'Error',
+    TkCommon.cancel: 'Cancel',
+    TkCommon.confirm: 'Confirm',
 
     TkError.unknown: 'Unknown error',
     TkError.network: 'Network error',
+
+    TkEnum.deviceAction.delete: 'Delete device',
+    TkEnum.deviceAction.activate: 'Activate',
+    TkEnum.deviceAction.deactivate: 'Deactivate',
+    TkEnum.deviceAction.changeName: 'Change name',
+
+    TkFieldHint.name: 'Name',
+
+    TkValidationError.fieldIsRequired: 'Field is required',
+    TkValidationError.nameIsTooShort: 'Name is too short',
+
+    TkNameFieldDialog.header: 'Type name',
   };
 }
