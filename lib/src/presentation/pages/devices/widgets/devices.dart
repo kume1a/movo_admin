@@ -34,15 +34,32 @@ class _Item extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return InkWell(
-      onLongPress: () => context.read<DevicesPageCubit>().onDeviceLongPress(device),
+      onTap: () => context.read<DevicesPageCubit>().onDevicePress(device),
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
         padding: const EdgeInsets.symmetric(vertical: 12),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(device.deviceId),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    device.name,
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    device.deviceId,
+                    style: TextStyle(color: theme.secondaryHeaderColor),
+                  ),
+                ],
+              ),
+            ),
             Container(
               width: 12,
               height: 12,

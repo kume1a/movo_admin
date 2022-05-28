@@ -25,6 +25,8 @@ class _Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return TapOutsideToClearFocus(
       child: Dialog(
         child: Padding(
@@ -75,6 +77,10 @@ class _Content extends StatelessWidget {
                   Expanded(
                     child: TextButton(
                       onPressed: context.read<NameFieldDialogCubit>().onConfirmPressed,
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(theme.colorScheme.secondary),
+                        overlayColor: MaterialStateProperty.all(Colors.white10),
+                      ),
                       child: Text(TkCommon.confirm.i18n),
                     ),
                   )

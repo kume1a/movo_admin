@@ -31,6 +31,8 @@ class NameFieldDialogCubit extends Cubit<NameFieldDialogState> {
   void onNameChanged(String value) => emit(state.copyWith(name: Name(value)));
 
   void onConfirmPressed() {
+    emit(state.copyWith(validateForm: true));
+
     if (!state.name.isValid) {
       return;
     }
